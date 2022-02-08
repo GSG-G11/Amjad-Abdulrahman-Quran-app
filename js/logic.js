@@ -1,5 +1,6 @@
-const quranSurahs = "https://api.quran.sutanlab.id/surah";
-const surah = "https://api.quran.sutanlab.id/surah/108";
+const randomSurah = getRandomSurah();
+const quranSurahs = 'https://api.quran.sutanlab.id/surah';
+const surah = `https://api.quran.sutanlab.id/surah/${randomSurah}`;
 
 const fetch = (url, cb) => {
   const xhr = new XMLHttpRequest();
@@ -18,7 +19,7 @@ const fetch = (url, cb) => {
       }
     }
   };
-  xhr.open("GET", url);
+  xhr.open('GET', url);
   xhr.send();
 };
 
@@ -26,9 +27,13 @@ const selector = (selector) => {
   return document.querySelector(selector);
 };
 
-function renderError(){
+function renderError() {
   const body = document.body;
   body.innerHTML = `<div class="error-img">
   <img src="https://http.cat/404"/>
-  </div>`
+  </div>`;
+}
+
+function getRandomSurah() {
+  return Math.floor(Math.random() * 115);
 }
