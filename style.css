@@ -115,7 +115,10 @@ main .container-ayah {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.267);
 }
-
+.surah-name{
+    font-size: 2rem;
+    margin-top: 10px;
+}
 @media (min-width: 567px) {
     .container {
         width: 550px;
