@@ -18,6 +18,13 @@ body {
     padding-inline: 15px;
     margin-inline: auto;
 }
+.error-img{
+    min-height: 100vh;
+    width: 100%;
+}
+.error-img img{
+    object-fit: cover;
+    width: 100%;}
 
 /* Header Section*/
 header {
