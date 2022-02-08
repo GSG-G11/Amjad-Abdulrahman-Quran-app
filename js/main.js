@@ -1,12 +1,12 @@
-const ayahText = selector(".ayah-text");
-const ayahTrans = selector(".ayah-trans");
-const surahName = selector(".surah-name");
-const audio = selector(".audio");
+const ayahText = selector('.ayah-text');
+const ayahTrans = selector('.ayah-trans');
+const surahName = selector('.surah-name');
+const audio = selector('.audio');
 
-const playBtn = selector(".play");
-const playPauseIcon = selector(".play i");
-const next = selector(".next");
-const back = selector(".back");
+const playBtn = selector('.play');
+const playPauseIcon = selector('.play i');
+const next = selector('.next');
+const back = selector('.back');
 
 const surahContainer = (data) => {
   let verses = data.data.verses;
@@ -25,13 +25,11 @@ const surahContainer = (data) => {
   let ayahIndex = 0;
   changeAyah(ayahIndex);
 
-  audio.addEventListener("ended", () => {
+  audio.addEventListener('ended', () => {
     ayahIndex++;
     changeAyah(ayahIndex);
   });
-  window.onload = () => {
-    audio.play();
-  };
+
   function changeAyah(ayahNo) {
     if (ayahNo < ayahAudios.length) {
       audio.src = ayahAudios[ayahNo];
@@ -43,14 +41,14 @@ const surahContainer = (data) => {
   }
 };
 let state = true;
-playBtn.addEventListener("click", () => {
+playBtn.addEventListener('click', () => {
   if (state === true) {
-    playPauseIcon.classList.add("fa-play");
+    playPauseIcon.classList.add('fa-play');
     state = false;
     audio.pause();
   } else {
-    playPauseIcon.classList.remove("fa-play");
-    playPauseIcon.classList.add("fa-pause");
+    playPauseIcon.classList.remove('fa-play');
+    playPauseIcon.classList.add('fa-pause');
     state = true;
     audio.play();
   }
