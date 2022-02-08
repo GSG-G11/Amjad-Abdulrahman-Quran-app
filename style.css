@@ -6,11 +6,80 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+body {
+  background-size: cover;
+  background-position: 0 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/background.jpg");
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
 .container {
   padding-inline: 15px;
   margin-inline: auto;
 }
+/* Start Main section */
+main .container-ayah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+#header {
+  font-size: 2rem;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+}
+#header .mid-night {
+  font-size: 15px;
+}
+.quran {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.quran .text-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(44, 51, 51, 0.123);
+  padding: 30px;
+  min-height: 200px;
+  border-radius: 10px;
+}
+.quran .icon-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.quran .icon-content .btn {
+  width: fit-content;
+  margin: 0 10px;
+  padding: 5px 10px;
+  font-size: 1.8rem;
+  border: none;
+  color: white;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+.quran .icon-content .play,
+.quran .icon-content .pause {
+  width: 100px;
+}
+.quran .icon-content .btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.267);
+}
+
+/* End Main section */
 
 @media (min-width: 567px) {
   .container {
