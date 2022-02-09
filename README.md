@@ -44,13 +44,6 @@ Build a website that recite's Surahs of the Holy Quran,
 
 ## User journey 🛸 <span id="user-journey"></span>
 
-- When opening th `Fantastic Four` website, you'll be faced with a heading section containing the navigation links for the rest of the sections on the page, and a welcoming message alongside a button for navigating to team members directly.
-- In the next section `What you get`, you'll be able to know what services does the `Fantastic Four` team offers.
-- Keep scrolling until reaching the `Our Team` section, in this section you're going to get to know our **Fantastic** team members seperitly with each profiles.
-- After that you'll see what preives clients say about our service.
-- Then you can choose a plan to start dealing with the **Fantastic Four** team.
-- And last but not least, you can fill up your contact information alongside your message for the **Fantastic Four** team.
--
 - when visiting the Quranly App website you'll be faced with a random ayah and a transilation of it
 - you'll see the current date and time
 - if you clicked on the play button you will start to hear the current ayah recitation
