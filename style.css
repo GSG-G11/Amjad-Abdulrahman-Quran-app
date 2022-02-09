@@ -80,8 +80,8 @@ main .container-ayah {
   font-weight: 900;
   text-align: center;
 }
-#header .mid-night {
-  font-size: 15px;
+#header .time {
+  font-size: 30px;
 }
 .quran {
   display: flex;
