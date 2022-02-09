@@ -65,7 +65,6 @@ const getTime = () => {
   });
 };
 
-// todo play btn on first click doesn't change bug
-// todo header responsive
-// todo main section ayah width
+module.exports = { getDate, getWeekday, getTime, getRandomSurah };
+
 // todo remove client id
