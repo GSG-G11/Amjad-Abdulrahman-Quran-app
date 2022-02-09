@@ -53,6 +53,7 @@ header .header-content {
 
 .app-speaker-icon i {
   font-size: 2rem;
+  padding: 5px 10px;
 }
 
 @media (max-width: 567px) {
@@ -119,7 +120,7 @@ main .container-ayah {
 .quran .icon-content .pause {
   width: 100px;
 }
-.quran .icon-content .btn:hover {
+.quran .icon-content .btn:hover,.app-speaker-icon:hover{
   transform: scale(1.1);
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.61);
@@ -131,6 +132,8 @@ main .container-ayah {
   margin-top: 10px;
   background-color: rgba(0, 0, 0, 0.61);
   padding: 5px 10px;
+  border-radius: 10px;
+  
 }
 @media (min-width: 567px) {
   .container {
