@@ -9,8 +9,6 @@
 body {
   background-size: cover;
   background-position: 0 80%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('./assets/background.jpg');
   background-repeat: no-repeat;
   min-height: 100vh;
 }
@@ -127,7 +125,8 @@ main .container-ayah {
   background-color: rgba(0, 0, 0, 0.61);
   border-radius: 10px;
 }
-.surah-name,.surah-trans {
+.surah-name,
+.surah-trans {
   font-size: 2rem;
   margin-top: 10px;
   background-color: rgba(0, 0, 0, 0.61);
@@ -137,7 +136,6 @@ main .container-ayah {
   .container {
     width: 550px;
   }
- 
 }
 
 @media (min-width: 768px) {
@@ -176,14 +174,15 @@ footer #heart {
   font-size: 1.2rem;
 }
 
-@media (max-width: 567px){
-  .quran .text-content{
+@media (max-width: 567px) {
+  .quran .text-content {
     font-size: 1.4rem;
   }
-  .quran .icon-content .btn{
+  .quran .icon-content .btn {
     font-size: 1.2rem;
   }
-  .surah-name,.surah-trans{
+  .surah-name,
+  .surah-trans {
     font-size: 1.2rem;
   }
 }

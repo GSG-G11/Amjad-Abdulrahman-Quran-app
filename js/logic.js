@@ -2,6 +2,10 @@ const randomSurah = getRandomSurah();
 const quranSurahs = 'https://api.quran.sutanlab.id/surah';
 const surah = `https://api.quran.sutanlab.id/surah/${randomSurah}`;
 
+const clientId = `client_id=Ru_LVQD9ON98fMDhBp1X-ELF5tnSBk3WK5q3sywX2E0`;
+const clientId2 = `client_id=EKcJF8x4OLW7eeIIAQtY2Jj5J048MSbRjorTjzI3Gfg`;
+const randomBackgroundUrl = `https://api.unsplash.com/photos/random?query=nature&${clientId2}`;
+
 const fetch = (url, cb) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
@@ -9,7 +13,7 @@ const fetch = (url, cb) => {
       switch (xhr.status) {
         case 200:
           let data = JSON.parse(xhr.responseText);
-          console.log(data)
+
           cb(data);
           break;
         case 404:
@@ -61,7 +65,7 @@ const getTime = () => {
   });
 };
 
-// todo surah name translation
 // todo play btn on first click doesn't change bug
 // todo header responsive
 // todo main section ayah width
+// todo remove client id
