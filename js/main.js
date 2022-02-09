@@ -35,7 +35,7 @@ const surahContainer = (data) => {
   // start ayah on initial click
   changeAyah(ayahIndex);
 
-  // change ayah automatically
+  // change ayah automatically after initial click
   audio.addEventListener('ended', () => {
     ayahIndex++;
     changeAyah(ayahIndex);

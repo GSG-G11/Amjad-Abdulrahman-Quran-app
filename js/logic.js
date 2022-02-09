@@ -63,4 +63,4 @@ const getTime = () => {
 // todo surah name translation
 // todo play btn on first click doesn't change bug
 // todo header responsive
-// main section ayah width
+// todo main section ayah width
