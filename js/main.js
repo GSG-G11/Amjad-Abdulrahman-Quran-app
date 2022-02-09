@@ -61,7 +61,7 @@ const surahContainer = (data) => {
       ayahText.innerText = ayahTexts[ayahNo];
       ayahTrans.innerText = transAyahTexts[ayahNo];
       surahName.innerText = surahTag;
-      surahNameTrans.innerText = surahTransTag
+      surahNameTrans.innerText = surahTransTag;
     }
   }
 };
@@ -99,3 +99,8 @@ speakerIcon.addEventListener('click', (e) => {
 });
 
 fetch(surah, surahContainer);
+
+// fetch(randomBackgroundUrl, (response) => {
+//   document.body.style.cssText = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+//   url(${response.urls.regular});`;
+// });
