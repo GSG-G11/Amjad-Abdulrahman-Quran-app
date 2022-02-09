@@ -127,7 +127,7 @@ main .container-ayah {
   background-color: rgba(0, 0, 0, 0.61);
   border-radius: 10px;
 }
-.surah-name {
+.surah-name,.surah-trans {
   font-size: 2rem;
   margin-top: 10px;
   background-color: rgba(0, 0, 0, 0.61);
@@ -137,6 +137,7 @@ main .container-ayah {
   .container {
     width: 550px;
   }
+ 
 }
 
 @media (min-width: 768px) {
@@ -173,4 +174,16 @@ footer .footer-content {
 footer #heart {
   color: red;
   font-size: 1.2rem;
+}
+
+@media (max-width: 567px){
+  .quran .text-content{
+    font-size: 1.4rem;
+  }
+  .quran .icon-content .btn{
+    font-size: 1.2rem;
+  }
+  .surah-name,.surah-trans{
+    font-size: 1.2rem;
+  }
 }
