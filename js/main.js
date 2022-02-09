@@ -24,6 +24,7 @@ const surahContainer = (data) => {
   let ayahAudios = [];
   let ayahTexts = [];
   let transAyahTexts = [];
+  let ayahIndex = 0;
 
   verses.forEach((verse) => {
     ayahAudios.push(verse.audio.primary);
@@ -31,12 +32,25 @@ const surahContainer = (data) => {
     transAyahTexts.push(verse.translation.en);
   });
 
-  let ayahIndex = 0;
+  // start ayah on initial click
   changeAyah(ayahIndex);
 
+  // change ayah automatically after initial click
   audio.addEventListener('ended', () => {
     ayahIndex++;
     changeAyah(ayahIndex);
+  });
+
+  // Next Ayah
+  nextBtn.addEventListener('click', () => {
+    lastAyah = ayahIndex > ayahAudios.length;
+    !lastAyah && changeAyah(++ayahIndex);
+  });
+
+  // Previous Ayah
+  backBtn.addEventListener('click', () => {
+    firstAyah = ayahIndex === 0;
+    !firstAyah && changeAyah(--ayahIndex);
   });
 
   function changeAyah(ayahNo) {

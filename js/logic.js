@@ -38,28 +38,29 @@ function getRandomSurah() {
   return Math.floor(Math.random() * 115);
 }
 
-function getDate() {
+const getDate = () => {
   const options = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   };
   return new Date().toLocaleDateString('en-us', options);
-}
+};
 
-function getWeekday() {
+const getWeekday = () => {
   const currentDate = new Date();
   var options = { weekday: 'long' };
   return new Intl.DateTimeFormat('en-US', options).format(currentDate);
-}
+};
 
-function getTime() {
+const getTime = () => {
   return new Date().toLocaleTimeString([], {
     hour: '2-digit',
     minute: '2-digit',
   });
-}
+};
 
-// todo next & back btn
 // todo surah name translation
 // todo play btn on first click doesn't change bug
+// todo header responsive
+// todo main section ayah width
