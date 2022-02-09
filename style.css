@@ -10,7 +10,7 @@ body {
   background-size: cover;
   background-position: 0 80%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/assets/background.jpg');
+    url('./assets/background.jpg');
   background-repeat: no-repeat;
   min-height: 100vh;
 }
