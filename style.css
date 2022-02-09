@@ -11,6 +11,7 @@ body {
   background-position: 0 80%;
   background-repeat: no-repeat;
   min-height: 100vh;
+  color: white;
 }
 
 .container {
@@ -68,9 +69,6 @@ header .header-content {
   header .header-content {
     flex-direction: column;
   }
-
-  header {
-  }
 }
 
 :is(.date, .app) {
@@ -106,9 +104,6 @@ header .header-content {
 }
 
 /* Start Main section */
-main {
-  padding-top: 55px;
-}
 main .container-ayah {
   display: flex;
   justify-content: center;
@@ -146,7 +141,7 @@ main .container-ayah {
 }
 .ayah-text,
 .ayah-trans {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -190,6 +185,7 @@ main .container-ayah {
   background-color: rgba(0, 0, 0, 0.61);
   padding: 5px 10px;
   border-radius: 10px;
+  text-align: center;
 }
 
 /* End Main section */
@@ -202,7 +198,7 @@ footer .footer-content {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   width: 100%;
 }
 
