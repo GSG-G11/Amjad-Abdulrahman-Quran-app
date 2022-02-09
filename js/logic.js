@@ -9,6 +9,7 @@ const fetch = (url, cb) => {
       switch (xhr.status) {
         case 200:
           let data = JSON.parse(xhr.responseText);
+          console.log(data)
           cb(data);
           break;
         case 404:

@@ -1,6 +1,7 @@
 const ayahText = selector('.ayah-text');
 const ayahTrans = selector('.ayah-trans');
 const surahName = selector('.surah-name');
+const surahNameTrans = selector('.surah-trans');
 const audio = selector('.audio');
 const playBtn = selector('.play');
 const playPauseIcon = selector('.play i');
@@ -21,6 +22,7 @@ const surahContainer = (data) => {
   let verses = data.data.verses;
 
   let surahTag = data.data.name.long;
+  let surahTransTag = data.data.name.transliteration.en;
   let ayahAudios = [];
   let ayahTexts = [];
   let transAyahTexts = [];
@@ -59,6 +61,7 @@ const surahContainer = (data) => {
       ayahText.innerText = ayahTexts[ayahNo];
       ayahTrans.innerText = transAyahTexts[ayahNo];
       surahName.innerText = surahTag;
+      surahNameTrans.innerText = surahTransTag
     }
   }
 };
