@@ -5,8 +5,16 @@ const audio = selector('.audio');
 
 const playBtn = selector('.play');
 const playPauseIcon = selector('.play i');
-const next = selector('.next');
-const back = selector('.back');
+const nextBtn = selector('.next');
+const backBtn = selector('.back');
+
+const fullDate = selector('.date-fullDate');
+const day = selector('.date-day');
+const time = selector('.time');
+
+fullDate.innerText = getDate();
+day.innerText = getWeekday();
+time.innerText = getTime();
 
 const surahContainer = (data) => {
   let verses = data.data.verses;
@@ -36,7 +44,6 @@ const surahContainer = (data) => {
       ayahText.innerText = ayahTexts[ayahNo];
       ayahTrans.innerText = transAyahTexts[ayahNo];
       surahName.innerText = surahTag;
-      audio.play();
     }
   }
 };
