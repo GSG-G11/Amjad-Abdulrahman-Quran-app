@@ -60,8 +60,6 @@ function getTime() {
   });
 }
 
-// Todo date and day & hour on header and main
-// Todo mute button
 // todo next & back btn
 // todo surah name translation
 // todo play btn on first click doesn't change bug

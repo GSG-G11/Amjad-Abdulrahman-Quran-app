@@ -2,7 +2,6 @@ const ayahText = selector('.ayah-text');
 const ayahTrans = selector('.ayah-trans');
 const surahName = selector('.surah-name');
 const audio = selector('.audio');
-
 const playBtn = selector('.play');
 const playPauseIcon = selector('.play i');
 const nextBtn = selector('.next');
@@ -11,6 +10,8 @@ const backBtn = selector('.back');
 const fullDate = selector('.date-fullDate');
 const day = selector('.date-day');
 const time = selector('.time');
+
+const speakerIcon = selector('.app-speaker-icon i');
 
 fullDate.innerText = getDate();
 day.innerText = getWeekday();
@@ -47,17 +48,36 @@ const surahContainer = (data) => {
     }
   }
 };
-let state = true;
+
+// Toggle play state
+let playState = true;
 playBtn.addEventListener('click', () => {
-  if (state === true) {
+  if (playState === true) {
     playPauseIcon.classList.add('fa-play');
-    state = false;
+    playState = false;
     audio.pause();
   } else {
     playPauseIcon.classList.remove('fa-play');
     playPauseIcon.classList.add('fa-pause');
-    state = true;
+    playState = true;
     audio.play();
+  }
+});
+
+// Toggle mute state
+let muteState = false;
+speakerIcon.addEventListener('click', (e) => {
+  if (muteState === false) {
+    speakerIcon.classList.add('fa-volume-mute');
+    audio.muted = true;
+
+    muteState = true;
+  } else {
+    speakerIcon.classList.remove('fa-volume-mute');
+    speakerIcon.classList.add('fa-volume-up');
+    audio.muted = false;
+
+    muteState = false;
   }
 });
 
