@@ -12,10 +12,36 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+
 .container {
   padding-inline: 15px;
   margin-inline: auto;
 }
+
+@media (min-width: 567px) {
+  .container {
+    width: 550px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 950px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1150px;
+  }
+}
+
 .error-img {
   min-height: 100vh;
   width: 100%;
@@ -36,7 +62,15 @@ header .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+}
+
+@media (max-width: 567px) {
+  header .header-content {
+    flex-direction: column;
+  }
+
+  header {
+  }
 }
 
 :is(.date, .app) {
@@ -56,9 +90,18 @@ header .header-content {
   padding: 5px 10px;
 }
 
-@media (max-width: 567px) {
+@media (max-width: 600px) {
   :is(.date, .app) span {
     font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  :is(.date, .app) {
+    flex-direction: column;
+  }
+
+  .app .app-speaker-icon {
+    margin-top: 2rem;
   }
 }
 
@@ -101,6 +144,19 @@ main .container-ayah {
   min-height: 200px;
   border-radius: 10px;
 }
+.ayah-text,
+.ayah-trans {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 567px) {
+  .ayah-text,
+  .ayah-trans {
+    font-size: 1rem;
+  }
+}
 .quran .icon-content {
   display: flex;
   justify-content: space-around;
@@ -120,7 +176,8 @@ main .container-ayah {
 .quran .icon-content .pause {
   width: 100px;
 }
-.quran .icon-content .btn:hover,.app-speaker-icon:hover{
+.quran .icon-content .btn:hover,
+.app-speaker-icon:hover {
   transform: scale(1.1);
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.61);
@@ -133,31 +190,8 @@ main .container-ayah {
   background-color: rgba(0, 0, 0, 0.61);
   padding: 5px 10px;
   border-radius: 10px;
-  
-}
-@media (min-width: 567px) {
-  .container {
-    width: 550px;
-  }
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 950px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1150px;
-  }
-}
 /* End Main section */
 
 /* Footer Section*/
