@@ -4,7 +4,7 @@ const surah = `https://api.quran.sutanlab.id/surah/${randomSurah}`;
 
 const clientId = `client_id=Ru_LVQD9ON98fMDhBp1X-ELF5tnSBk3WK5q3sywX2E0`;
 const clientId2 = `client_id=EKcJF8x4OLW7eeIIAQtY2Jj5J048MSbRjorTjzI3Gfg`;
-const randomBackgroundUrl = `https://api.unsplash.com/photos/random?query=nature&${clientId2}`;
+const randomBackgroundUrl = `https://api.unsplash.com/photos/random?query=nature&${clientId}`;
 
 const fetch = (url, cb) => {
   const xhr = new XMLHttpRequest();
