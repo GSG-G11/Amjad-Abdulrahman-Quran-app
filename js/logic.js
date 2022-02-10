@@ -43,6 +43,16 @@ function getRandomSurah() {
   return Math.floor(Math.random() * 115);
 }
 
+const changeToPlayState = (playPauseIcon) => {
+  playPauseIcon.classList.remove('fa-play');
+  playPauseIcon.classList.add('fa-pause');
+};
+
+const changeToPauseState = (playPauseIcon) => {
+  playPauseIcon.classList.remove('fa-pause');
+  playPauseIcon.classList.add('fa-play');
+};
+
 const getDate = () => {
   const options = {
     year: 'numeric',
