@@ -47,12 +47,14 @@ const surahContainer = (data) => {
   nextBtn.addEventListener('click', () => {
     lastAyah = ayahIndex > ayahAudios.length;
     !lastAyah && changeAyah(++ayahIndex);
+    changeToPlayState(playPauseIcon);
   });
 
   // Previous Ayah
   backBtn.addEventListener('click', () => {
     firstAyah = ayahIndex === 0;
     !firstAyah && changeAyah(--ayahIndex);
+    changeToPlayState(playPauseIcon);
   });
 
   function changeAyah(ayahNo) {
@@ -70,13 +72,11 @@ const surahContainer = (data) => {
 let playState = true;
 playBtn.addEventListener('click', () => {
   if (playState === true) {
-    playPauseIcon.classList.remove('fa-play')
-    playPauseIcon.classList.add('fa-pause');
+    changeToPlayState(playPauseIcon);
     playState = false;
     audio.play();
   } else {
-    playPauseIcon.classList.remove('fa-pause');
-    playPauseIcon.classList.add('fa-play');
+    changeToPauseState(playPauseIcon);
     playState = true;
     audio.pause();
   }
@@ -91,8 +91,8 @@ speakerIcon.addEventListener('click', (e) => {
 
     muteState = true;
   } else {
-    speakerIcon.classList.remove('fa-volume-mute');
     speakerIcon.classList.add('fa-volume-up');
+    speakerIcon.classList.remove('fa-volume-mute');
     audio.muted = false;
 
     muteState = false;
