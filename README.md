@@ -32,7 +32,7 @@ Build a website that recite's Surahs of the Holy Quran,
 - I want to be able to go forward or backward in the recited surah
 - I want to be able to mute the sound of the recitation
 - I want to see the name of the surah and a translation of it
-- I want new background on every refresh or every 30s
+- I want to see a new background on every refresh or every 30s
 
 ### As a visually impaired client:
 
@@ -44,13 +44,13 @@ Build a website that recite's Surahs of the Holy Quran,
 
 ## User journey 🛸 <span id="user-journey"></span>
 
-- when visiting the Quranly App website you'll be faced with a random ayah and a transilation of it
+- when visiting the Quranly App website you'll be faced with a random ayah and a translation of it
 - you'll see the current date and time
 - if you clicked on the play button you will start to hear the current ayah recitation
 - if you clicked on the pause button, the audio will stop
 - if you clicked on the next button you'll skip an ayah froward
 - if you clicked on the back button you'll skip an ayah backward
-- if you clicked on the volume icon you'll mute the sound whilte still playing the audio
+- if you clicked on the volume icon you'll mute the sound while still playing the audio
 
 ## Prototype 🤖 <span id="prototype"></span>
 
