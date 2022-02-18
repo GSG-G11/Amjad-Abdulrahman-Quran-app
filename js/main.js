@@ -1,28 +1,27 @@
-const ayahText = selector('.ayah-text');
-const ayahTrans = selector('.ayah-trans');
-const surahName = selector('.surah-name');
-const surahNameTrans = selector('.surah-trans');
-const audio = selector('.audio');
-const playBtn = selector('.play');
-const playPauseIcon = selector('.play i');
-const nextBtn = selector('.next');
-const backBtn = selector('.back');
-
-const fullDate = selector('.date-fullDate');
-const day = selector('.date-day');
-const time = selector('.time');
-
-const speakerIcon = selector('.app-speaker-icon i');
+const ayahText = select('.ayah-text');
+const ayahTrans = select('.ayah-trans');
+const surahName = select('.surah-name');
+const surahNameTrans = select('.surah-trans');
+const audio = select('.audio');
+const playBtn = select('.play');
+const playPauseIcon = select('.play i');
+const speakerIcon = select('.app-speaker-icon i');
+const nextBtn = select('.next');
+const backBtn = select('.back');
+const surahSelect = select('.surah-select');
+const fullDate = select('.date-fullDate');
+const day = select('.date-day');
+const time = select('.time');
+const surahNameWrapper = select('.surah-name-wrapper');
 
 fullDate.innerText = getDate();
 day.innerText = getWeekday();
 time.innerText = getTime();
 
-const surahContainer = (data) => {
-  let verses = data.data.verses;
-
-  let surahTag = data.data.name.long;
-  let surahTransTag = data.data.name.transliteration.en;
+const fetchSurah = (response) => {
+  const verses = response.data.verses;
+  let surahTag = response.data.name.long;
+  let surahTransTag = response.data.name.transliteration.en;
   let ayahAudios = [];
   let ayahTexts = [];
   let transAyahTexts = [];
@@ -36,6 +35,7 @@ const surahContainer = (data) => {
 
   // start ayah on initial click
   changeAyah(ayahIndex);
+  changeToPlayState(playPauseIcon, audio);
 
   // change ayah automatically after initial click
   audio.addEventListener('ended', () => {
@@ -47,14 +47,14 @@ const surahContainer = (data) => {
   nextBtn.addEventListener('click', () => {
     lastAyah = ayahIndex > ayahAudios.length;
     !lastAyah && changeAyah(++ayahIndex);
-    changeToPlayState(playPauseIcon);
+    changeToPlayState(playPauseIcon, audio);
   });
 
   // Previous Ayah
   backBtn.addEventListener('click', () => {
     firstAyah = ayahIndex === 0;
     !firstAyah && changeAyah(--ayahIndex);
-    changeToPlayState(playPauseIcon);
+    changeToPlayState(playPauseIcon, audio);
   });
 
   function changeAyah(ayahNo) {
@@ -68,40 +68,55 @@ const surahContainer = (data) => {
   }
 };
 
+// select surah
+surahNameWrapper.addEventListener('click', () => {
+  surahSelect.style.display = 'block';
+
+  // smooth enter animation
+  setTimeout(() => {
+    surahSelect.style.opacity = '1';
+    surahSelect.style.transform = 'translateY(0)';
+  }, 0);
+});
+
 // Toggle play state
-let playState = true;
 playBtn.addEventListener('click', () => {
-  if (playState === true) {
-    changeToPlayState(playPauseIcon);
-    playState = false;
-    audio.play();
-  } else {
-    changeToPauseState(playPauseIcon);
-    playState = true;
-    audio.pause();
+  if (playState) {
+    return changeToPlayState(playPauseIcon, audio);
   }
+
+  changeToPauseState(playPauseIcon, audio);
 });
 
 // Toggle mute state
-let muteState = false;
 speakerIcon.addEventListener('click', (e) => {
-  if (muteState === false) {
-    speakerIcon.classList.add('fa-volume-mute');
-    audio.muted = true;
-
-    muteState = true;
-  } else {
-    speakerIcon.classList.add('fa-volume-up');
-    speakerIcon.classList.remove('fa-volume-mute');
-    audio.muted = false;
-
-    muteState = false;
+  if (!muted) {
+    return muteSound(speakerIcon, audio);
   }
+
+  unMuteSound(speakerIcon, audio);
 });
 
-fetch(surah, surahContainer);
+window.onload = () => {
+  const surah = `https://api.quran.sutanlab.id/surah/1`;
+  fetch(surah, fetchSurah);
+};
+
+surahSelect.addEventListener('change', (e) => {
+  const selectedSurah = surahSelect.value;
+  const surah = `https://api.quran.sutanlab.id/surah/${selectedSurah}`;
+
+  surahSelect.style.opacity = '0';
+
+  // smooth exit animation
+  setTimeout(() => (surahSelect.style.display = 'none'), 500);
+
+  fetch(surah, fetchSurah);
+});
 
 fetch(randomBackgroundUrl, (response) => {
   document.body.style.cssText = `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url(${response.urls.regular});`;
 });
+
+fetch(allSurahs, renderSurahsList);

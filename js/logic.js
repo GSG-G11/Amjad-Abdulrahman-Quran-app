@@ -1,56 +1,56 @@
-const randomSurah = getRandomSurah();
-const quranSurahs = 'https://api.quran.sutanlab.id/surah';
-const surah = `https://api.quran.sutanlab.id/surah/${randomSurah}`;
+const { CLIENT_ID } = config;
+const randomBackgroundUrl = `https://api.unsplash.com/photos/random?query=nature&${CLIENT_ID}`;
+const allSurahs = 'https://api.quran.sutanlab.id/surah';
 
-const clientId = `client_id=Ru_LVQD9ON98fMDhBp1X-ELF5tnSBk3WK5q3sywX2E0`;
-const clientId2 = `client_id=EKcJF8x4OLW7eeIIAQtY2Jj5J048MSbRjorTjzI3Gfg`;
-const randomBackgroundUrl = `https://api.unsplash.com/photos/random?query=nature&${clientId}`;
-
-const fetch = (url, cb) => {
-  const xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4) {
-      switch (xhr.status) {
-        case 200:
-          let data = JSON.parse(xhr.responseText);
-
-          cb(data);
-          break;
-        case 404:
-          renderError();
-          break;
-        default:
-          break;
-      }
-    }
-  };
-  xhr.open('GET', url);
-  xhr.send();
-};
-
-const selector = (selector) => {
-  return document.querySelector(selector);
-};
-
-function renderError() {
+const renderError = () => {
   const body = document.body;
   body.innerHTML = `<div class="error-img">
   <img src="https://http.cat/404"/>
   </div>`;
-}
-
-function getRandomSurah() {
-  return Math.floor(Math.random() * 115);
-}
-
-const changeToPlayState = (playPauseIcon) => {
-  playPauseIcon.classList.remove('fa-play');
-  playPauseIcon.classList.add('fa-pause');
+  return body;
 };
 
-const changeToPauseState = (playPauseIcon) => {
+const renderSurahsList = (response) => {
+  response.data.forEach((surah) => {
+    const option = createElement('option', null, surah.name.short);
+    option.value = surah.number;
+
+    surahSelect.append(option);
+  });
+};
+
+let playState = true;
+const changeToPlayState = (playPauseIcon, audio) => {
+  playPauseIcon.classList.remove('fa-play');
+  playPauseIcon.classList.add('fa-pause');
+  audio.play();
+
+  playState = false;
+};
+
+const changeToPauseState = (playPauseIcon, audio) => {
   playPauseIcon.classList.remove('fa-pause');
   playPauseIcon.classList.add('fa-play');
+  audio.pause();
+
+  playState = true;
+};
+
+let muted = false;
+const muteSound = (speakerIcon, audio) => {
+  speakerIcon.classList.add('fa-volume-mute');
+  audio.muted = true;
+
+  muteState = true;
+};
+
+const unMuteSound = (speakerIcon, audio) => {
+  speakerIcon.classList.remove('fa-volume-mute');
+  speakerIcon.classList.add('fa-volume-up');
+  t;
+  audio.muted = false;
+
+  muteState = false;
 };
 
 const getDate = () => {
@@ -64,7 +64,7 @@ const getDate = () => {
 
 const getWeekday = () => {
   const currentDate = new Date();
-  var options = { weekday: 'long' };
+  const options = { weekday: 'long' };
   return new Intl.DateTimeFormat('en-US', options).format(currentDate);
 };
 
@@ -75,6 +75,6 @@ const getTime = () => {
   });
 };
 
-module.exports = { getDate, getWeekday, getTime, getRandomSurah };
-
-// todo remove client id
+if (typeof module === undefined) {
+  module.exports = { getDate, getWeekday, getTime };
+}

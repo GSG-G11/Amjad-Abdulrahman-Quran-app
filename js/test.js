@@ -1,6 +1,7 @@
 const { getDate, getWeekday, getTime, getRandomSurah } = require('./logic');
 
 describe('date - time - day', () => {
+  // 1- Date
   it('should get current Date', () => {
     const options = {
       year: 'numeric',
@@ -13,9 +14,10 @@ describe('date - time - day', () => {
     expect(currentDate).toEqual(expectedDate);
   });
 
+  // 2- Weekday
   it('should get weekday', () => {
     const currentDate = new Date();
-    var options = { weekday: 'long' };
+    const options = { weekday: 'long' };
     const currentDay = new Intl.DateTimeFormat('en-US', options).format(
       currentDate
     );
@@ -23,6 +25,7 @@ describe('date - time - day', () => {
     expect(currentDay).toEqual(expectWeekDay);
   });
 
+  // 3- Time
   it('should getTimes', () => {
     const currentTime = new Date().toLocaleTimeString([], {
       hour: '2-digit',
@@ -31,11 +34,5 @@ describe('date - time - day', () => {
     const expectedTime = getTime();
 
     expect(currentTime).toEqual(expectedTime);
-  });
-
-  it('should get a random Surah no', () => {
-    const randomSurahNo = getRandomSurah();
-    expect(randomSurahNo).toBeGreaterThan(0);
-    expect(randomSurahNo).toBeLessThan(115);
   });
 });

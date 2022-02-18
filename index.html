@@ -37,6 +37,11 @@
       </div>
     </header>
 
+    <!-- Select Surah Section  -->
+    <section class="surahs-list">
+      <select name="surah" class="surah-select"></select>
+    </section>
+
     <!--  Start Main section -->
     <main>
       <div class="container">
@@ -61,7 +66,7 @@
 
             <button class="btn next">Next</button>
           </div>
-          <div>
+          <div class="surah-name-wrapper">
             <p class="surah-name"></p>
             <p class="surah-trans"></p>
           </div>
@@ -79,8 +84,9 @@
         </div>
       </div>
     </footer>
-
+    <script src="/config.js"></script>
     <script src="js/logic.js"></script>
+    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
