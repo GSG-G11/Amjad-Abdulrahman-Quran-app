@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-shadow */
 // // select surah
 // surahNameWrapper.addEventListener('click', () => {
 //   surahSelect.style.display = 'block';
@@ -47,8 +49,9 @@
 // };
 
 import fetch from './request.js';
-import { getDate, getTime, getWeekday, getRandSurah } from './logic.js';
+// import { getDate, getTime, getWeekday, getRandSurah } from './logic.js';
 import { createEl, select } from './utils.js';
+
 const $body = select('body');
 const $ayahText = select('.ayah-text');
 const $ayahTrans = select('.ayah-trans');
@@ -60,14 +63,14 @@ const $playPauseIcon = select('.play i');
 const $speakerIcon = select('.app-speaker-icon i');
 const $nextBtn = select('.next');
 const $backBtn = select('.back');
-const $surahSelect = select('.surah-select');
-const $fullDate = select('.date-fullDate');
-const $day = select('.date-day');
-const $time = select('.time');
-const $surahNameWrapper = select('.surah-name-wrapper');
-const backgroundUrl = `https://api.unsplash.com/photos/random?query=nature&client_id=kH9RTpwTF6ecLyiMZYLvRWkUoIerJwzeF67-7APIK-0`;
-const allSurahsUrl = 'https://api.quran.sutanlab.id/surah';
-const surahUrl = `https://api.quran.sutanlab.id/surah/108`;
+// const $surahSelect = select('.surah-select');
+// const $fullDate = select('.date-fullDate');
+// const $day = select('.date-day');
+// const $time = select('.time');
+// const $surahNameWrapper = select('.surah-name-wrapper');
+// const backgroundUrl = `https://api.unsplash.com/photos/random?query=nature&client_id=kH9RTpwTF6ecLyiMZYLvRWkUoIerJwzeF67-7APIK-0`;
+// const allSurahsUrl = 'https://api.quran.sutanlab.id/surah';
+const surahUrl = 'https://api.quran.sutanlab.id/surah/108';
 
 let ayahNumber = 0;
 const ayahAudios = [];
@@ -79,7 +82,9 @@ function togglePlayState() {
 
   $playPauseIcon.className = isPaused ? 'fas fa-pause' : 'fas fa-play';
 
-  isPaused ? $audioEl.play() : $audioEl.pause();
+  if (isPaused) return $audioEl.play();
+
+  return $audioEl.pause();
 }
 
 function toggleMuteState() {
@@ -128,13 +133,13 @@ fetch(surahUrl, getSurahInfo)
     $nextBtn.addEventListener('click', () => {
       const isLastAyah = ayahNumber === ayahAudios.length - 1;
 
-      !isLastAyah && renderAyah(++ayahNumber, surahDetails);
+      !isLastAyah && renderAyah((ayahNumber += 1), surahDetails);
     });
 
     $backBtn.addEventListener('click', () => {
       const isFirstAyah = ayahNumber === 0;
 
-      !isFirstAyah && renderAyah(--ayahNumber, surahDetails);
+      !isFirstAyah && renderAyah((ayahNumber -= 1), surahDetails);
     });
   });
 
@@ -143,5 +148,6 @@ $playBtn.addEventListener('click', togglePlayState);
 
 // Toggle mute state
 $speakerIcon.addEventListener('click', toggleMuteState);
+
 // fetch(backgroundUrl, changeBackground);
 // fetch(allSurahsUrl, renderSurahsDropList);
