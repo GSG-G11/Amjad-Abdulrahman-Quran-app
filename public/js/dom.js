@@ -122,7 +122,7 @@ function renderAyah(ayahNumber, surahDetails) {
   return surahDetails;
 }
 function changeAyahOnEnd(ayahNumber, surahDetails) {
-  return $audioEl.addEventListener('ended', () => renderAyah(++ayahNumber, surahDetails));
+  return $audioEl.addEventListener('ended', () => renderAyah((ayahNumber += 1), surahDetails));
 }
 
 fetch(surahUrl, getSurahInfo)
