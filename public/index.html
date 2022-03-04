@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quranly-App</title>
     <link rel="icon" href="./assets/koran.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -18,7 +19,6 @@
 
   <body>
     <!-- Header Section-->
-
     <header>
       <div class="container">
         <div class="header-content">
@@ -29,9 +29,7 @@
 
           <div class="app">
             <span class="app-name">QuranLy</span>
-            <span class="app-speaker-icon">
-              <i class="fas fa-volume-up"></i
-            ></span>
+            <span class="app-speaker-icon"> <i class="fas fa-volume-up"></i></span>
           </div>
         </div>
       </div>
@@ -52,10 +50,8 @@
         <section class="quran">
           <div class="text-content">
             <p class="ayah-text">ٱلحَمدُ لِلَّهِ رَبِّ ٱلعَـٰلَمِین</p>
-            <p class="ayah-trans">
-              All praise is to Allah, the Lord Of The Creation.
-            </p>
-            <audio class="audio" src="" autoplay></audio>
+            <p class="ayah-trans">All praise is to Allah, the Lord Of The Creation.</p>
+            <audio class="audio" autoplay></audio>
           </div>
           <div class="icon-content">
             <button class="btn back">Back</button>
@@ -79,14 +75,15 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          Made with <i id="heart" class="fas fa-heart"></i> by Amjad Yahia And
-          Abdulrahman
+          Made with <i id="heart" class="fas fa-heart"></i> by Amjad Yahia And Abdulrahman
         </div>
       </div>
     </footer>
-    <script src="/config.js"></script>
-    <script src="js/logic.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/main.js"></script>
+
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/request.js"></script>
+    <script type="module" src="js/logic.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/dom.js"></script>
   </body>
 </html>

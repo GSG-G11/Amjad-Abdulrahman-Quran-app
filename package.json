@@ -1,7 +1,7 @@
 {
   "name": "amjad-abdulrahman-api-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Quran app",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll"
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/GSG-G11/Amjad-Abdulrahman-API-Project#readme",
   "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "jest": "^27.5.1"
   }
 }
