@@ -11,7 +11,7 @@
 
 ## Links :tv:
 
-- [Live Demo](https://gsg-g11.github.io/Amjad-Abdulrahman-Quran-app/) <span id="demo"></span>
+- [Live Demo](https://quranly.netlify.app/) <span id="demo"></span>
 - [Figma Design](https://www.figma.com/file/YQYBxdUSaY67ZEpVUNpjfh/QURAN-APP?node-id=0%3A1)
 - [Sutanlab-API](https://api.quran.sutanlab.id) <span id="upsplash"></span>
 - [Unsplash-API](https://unsplash.com/developers) <span id="sutanlab"></span>
