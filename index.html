@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quranly-App</title>
-    <link rel="icon" href="./assets/koran.png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/assets/koran.png" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -18,7 +19,6 @@
 
   <body>
     <!-- Header Section-->
-
     <header>
       <div class="container">
         <div class="header-content">
@@ -30,7 +30,7 @@
           <div class="app">
             <span class="app-name">QuranLy</span>
             <span class="app-speaker-icon">
-              <i class="fas fa-volume-up"></i
+              <i id="speaker-icon" class="fas fa-volume-up"></i
             ></span>
           </div>
         </div>
@@ -55,20 +55,20 @@
             <p class="ayah-trans">
               All praise is to Allah, the Lord Of The Creation.
             </p>
-            <audio class="audio" src="" autoplay></audio>
+            <audio class="audio" autoplay></audio>
           </div>
           <div class="icon-content">
-            <button class="btn back">Back</button>
+            <button class="btn back">Prev</button>
 
             <button class="btn play">
-              <i id="play-pause-btn" class="fas fa-play"> </i>
+              <i id="play-pause-btn" class="fas fa-play-circle"> </i>
             </button>
 
             <button class="btn next">Next</button>
           </div>
           <div class="surah-name-wrapper">
             <p class="surah-name"></p>
-            <p class="surah-trans"></p>
+            <p class="surah-name-trans"></p>
           </div>
         </section>
       </div>
@@ -84,9 +84,10 @@
         </div>
       </div>
     </footer>
-    <script src="/config.js"></script>
-    <script src="js/logic.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/main.js"></script>
+
+    <script type="module" src="/js/utils.js"></script>
+    <script type="module" src="/js/request.js"></script>
+    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/js/app.js"></script>
   </body>
 </html>
