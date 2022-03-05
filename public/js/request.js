@@ -1,4 +1,4 @@
-import { renderError } from './logic.js';
+// import { renderError } from './logic.js';
 
 // const fetch = (url, cb) => {
 //   const xhr = new XMLHttpRequest();
@@ -14,12 +14,18 @@ import { renderError } from './logic.js';
 //   xhr.send();
 // };
 
-const fetchData = async (url, cb) => {
-  const data = await fetch(url);
+const fetchData = async (url, method, dataToSend) => {
+  const res = await fetch(url, {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dataToSend),
+  });
 
-  const response = await data.json();
+  if (!res.ok) throw new Error('Something Wrong Happened');
 
-  return cb(response);
+  const data = await res.json();
+
+  return data;
 };
 
 export default fetchData;

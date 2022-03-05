@@ -1,10 +1,12 @@
 {
-  "name": "amjad-abdulrahman-api-project",
+  "name": "amjad-abdulrahman-Quranly-app",
   "version": "1.0.0",
   "description": "A Quran app",
-  "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watch",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
     "eslint": "^8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "vite": "^2.8.0"
   }
 }

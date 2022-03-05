@@ -2,7 +2,7 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": false
   },
   "extends": ["airbnb-base"],
   "parserOptions": {

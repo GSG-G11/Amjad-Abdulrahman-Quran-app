@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quranly-App</title>
-    <link rel="icon" href="./assets/koran.png" />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" href="/assets/koran.png" />
+    <link rel="stylesheet" href="/styles/style.css" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -29,7 +29,9 @@
 
           <div class="app">
             <span class="app-name">QuranLy</span>
-            <span class="app-speaker-icon"> <i class="fas fa-volume-up"></i></span>
+            <span class="app-speaker-icon">
+              <i id="speaker-icon" class="fas fa-volume-up"></i
+            ></span>
           </div>
         </div>
       </div>
@@ -50,21 +52,23 @@
         <section class="quran">
           <div class="text-content">
             <p class="ayah-text">ٱلحَمدُ لِلَّهِ رَبِّ ٱلعَـٰلَمِین</p>
-            <p class="ayah-trans">All praise is to Allah, the Lord Of The Creation.</p>
+            <p class="ayah-trans">
+              All praise is to Allah, the Lord Of The Creation.
+            </p>
             <audio class="audio" autoplay></audio>
           </div>
           <div class="icon-content">
-            <button class="btn back">Back</button>
+            <button class="btn back">Prev</button>
 
             <button class="btn play">
-              <i id="play-pause-btn" class="fas fa-play"> </i>
+              <i id="play-pause-btn" class="fas fa-play-circle"> </i>
             </button>
 
             <button class="btn next">Next</button>
           </div>
           <div class="surah-name-wrapper">
             <p class="surah-name"></p>
-            <p class="surah-trans"></p>
+            <p class="surah-name-trans"></p>
           </div>
         </section>
       </div>
@@ -75,15 +79,15 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          Made with <i id="heart" class="fas fa-heart"></i> by Amjad Yahia And Abdulrahman
+          Made with <i id="heart" class="fas fa-heart"></i> by Amjad Yahia And
+          Abdulrahman
         </div>
       </div>
     </footer>
 
-    <script type="module" src="js/utils.js"></script>
-    <script type="module" src="js/request.js"></script>
-    <script type="module" src="js/logic.js"></script>
-    <script type="module" src="js/index.js"></script>
-    <script type="module" src="js/dom.js"></script>
+    <script type="module" src="/js/utils.js"></script>
+    <script type="module" src="/js/request.js"></script>
+    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="/js/app.js"></script>
   </body>
 </html>
