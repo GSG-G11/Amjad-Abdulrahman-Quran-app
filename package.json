@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Quran app",
   "scripts": {
+    "start": "vite build",
     "test": "jest --watch",
     "dev": "vite",
     "build": "vite build",
