@@ -75,11 +75,17 @@ const getVerse = (ayahNumber) => {
 };
 
 const togglePlayState = () => {
-  $playPauseBtn.classList.toggle('fa-pause');
   const isPaused = $audioEl.paused;
 
-  if (isPaused) $audioEl.play();
-  else $audioEl.pause();
+  if (isPaused) {
+    $playPauseBtn.classList.remove('fa-play');
+    $playPauseBtn.classList.add('fa-pause');
+    return $audioEl.play();
+  }
+
+  $playPauseBtn.classList.remove('fa-pause');
+  $playPauseBtn.classList.add('fa-play');
+  return $audioEl.pause();
 };
 
 const toggleMuteState = () => {
