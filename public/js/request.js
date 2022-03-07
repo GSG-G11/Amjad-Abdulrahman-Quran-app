@@ -5,7 +5,7 @@ const fetchData = async (url, method, dataToSend) => {
     body: JSON.stringify(dataToSend),
   });
 
-  if (!res.ok) throw new Error('Something Wrong Happened');
+  if (!res.ok) throw new Error(url);
 
   const data = await res.json();
 

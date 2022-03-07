@@ -7,6 +7,7 @@
     <title>Quranly-App</title>
     <link rel="icon" href="/assets/koran.png" />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/loading_spinner.css" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -51,24 +52,23 @@
         </header>
         <section class="quran">
           <div class="text-content">
-            <p class="ayah-text">ٱلحَمدُ لِلَّهِ رَبِّ ٱلعَـٰلَمِین</p>
-            <p class="ayah-trans">
-              All praise is to Allah, the Lord Of The Creation.
-            </p>
+            <p class="ayah-text">Getting Surah...</p>
+            <p class="ayah-trans">Getting Surah...</p>
             <audio class="audio" autoplay></audio>
           </div>
           <div class="icon-content">
             <button class="btn back">Prev</button>
 
             <button class="btn play">
-              <i id="play-pause-btn" class="fas fa-play-circle"> </i>
+              <div class="spin"></div>
+              <i id="play-pause-btn" class="fas fa-play"> </i>
             </button>
 
             <button class="btn next">Next</button>
           </div>
           <div class="surah-name-wrapper">
-            <p class="surah-name"></p>
-            <p class="surah-name-trans"></p>
+            <p class="surah-name">Getting Surah...</p>
+            <p class="surah-name-trans">Getting Surah.Surah..</p>
           </div>
         </section>
       </div>
@@ -79,8 +79,7 @@
     <footer>
       <div class="container">
         <div class="footer-content">
-          Made with <i id="heart" class="fas fa-heart"></i> by Amjad Yahia And
-          Abdulrahman
+          Made with <i id="heart" class="fas fa-heart"></i> by Amjad Yahia And Abdulrahman
         </div>
       </div>
     </footer>
