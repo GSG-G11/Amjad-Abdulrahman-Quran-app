@@ -10,17 +10,17 @@ const allSurahs = 'https://api.quran.sutanlab.id/surah';
 const $body = select('body');
 const $audioEl = select('audio');
 const $playBtn = select('.play');
+const $playPauseIcon = select('#play-pause-btn');
 const $ayahText = select('.ayah-text');
 const $transAyahText = select('.ayah-trans');
 const $surahNameWrapper = select('.surah-name-wrapper');
 const $surahName = select('.surah-name');
 const $transSurahName = select('.surah-name-trans');
-const $playPauseBtn = select('#play-pause-btn');
 const $speakerIcon = select('#speaker-icon');
 const $nextBtn = select('button.next');
 const $prevBtn = select('button.back');
 const $surahSelect = select('.surah-select');
-
+const $spinner = select('.spin');
 const $fullDate = select('.date-fullDate');
 const $day = select('.date-day');
 const $time = select('.time');
@@ -29,10 +29,27 @@ const versesAudios = [];
 const versesText = [];
 const TransVersesText = [];
 
+const showSpinner = () => {
+  $playPauseIcon.style.opacity = '0';
+  $spinner.style.display = 'block';
+
+  $ayahText.innerText = 'Getting Surah';
+  $transAyahText.innerText = 'Getting Surah';
+  $surahName.innerText = 'Getting Surah';
+  $transSurahName.innerText = 'Getting Surah';
+};
+
+const hideSpinner = () => {
+  $playPauseIcon.style.opacity = '1';
+  $spinner.style.display = 'none';
+};
+
 const fetchSurah = async (surahUrl) => {
+  showSpinner();
   const {
     data: { verses, name },
   } = await fetchData(surahUrl);
+  hideSpinner();
   return { verses, name };
 };
 
@@ -67,7 +84,7 @@ const renderSurah = async (surahUrl) => {
 };
 
 const getVerse = (ayahNumber) => {
-  $playPauseBtn.classList.add('fa-pause');
+  $playPauseIcon.classList.add('fa-pause');
 
   $audioEl.src = versesAudios[ayahNumber];
   $ayahText.innerText = versesText[ayahNumber];
@@ -75,11 +92,17 @@ const getVerse = (ayahNumber) => {
 };
 
 const togglePlayState = () => {
-  $playPauseBtn.classList.toggle('fa-pause');
   const isPaused = $audioEl.paused;
 
-  if (isPaused) $audioEl.play();
-  else $audioEl.pause();
+  if (isPaused) {
+    $playPauseIcon.classList.remove('fa-play');
+    $playPauseIcon.classList.add('fa-pause');
+    return $audioEl.play();
+  }
+
+  $playPauseIcon.classList.remove('fa-pause');
+  $playPauseIcon.classList.add('fa-play');
+  return $audioEl.pause();
 };
 
 const toggleMuteState = () => {

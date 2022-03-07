@@ -33,7 +33,12 @@ import fetchData from './request.js';
 Promise.all([
   renderSurah(randomSurah),
   fetchAllSurahs().then(renderSurahsSelect),
-  fetchData(backgroundUrl).then(changeBackground),
+  fetchData(backgroundUrl)
+    .then(changeBackground)
+    .catch((err) =>
+      // eslint-disable-next-line no-console
+      console.log(`somehing wrong happened when fetching data from ${err.message}`),
+    ),
 ]);
 
 $fullDate.innerText = getDate();

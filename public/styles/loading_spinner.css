@@ -1,0 +1,37 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  position: relative;
+  position: relative;
+  transform: translate(-15px, 5px);
+  display: none;
+}
+.spin::before {
+  content: '';
+  animation: 1.5s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  will-change: transform;
+}
+
+@media (max-width: 567px) {
+  .spin {
+    transform: translate(-13px, -2px);
+  }
+  .spin::before {
+    height: 1rem;
+    width: 1rem;
+  }
+}
