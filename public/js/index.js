@@ -1,10 +1,11 @@
 import fetchData from './request.js';
 import { select, createEl } from './utils.js';
 
+const CLIENT_ID = 'kH9RTpwTF6ecLyiMZYLvRWkUoIerJwzeF67-7APIK-0';
+
 const getRandSurah = () => Math.floor(Math.random() * 115);
 const randomSurah = `https://api.quran.sutanlab.id/surah/${getRandSurah()}`;
-const backgroundUrl =
-  'https://api.unsplash.com/photos/random?query=nature&client_id=kH9RTpwTF6ecLyiMZYLvRWkUoIerJwzeF67-7APIK-0';
+const backgroundUrl = `https://api.unsplash.com/photos/random?query=nature&client_id=${CLIENT_ID}`;
 const allSurahs = 'https://api.quran.sutanlab.id/surah';
 
 const $body = select('body');
