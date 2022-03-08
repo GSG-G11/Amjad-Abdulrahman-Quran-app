@@ -198,6 +198,10 @@ main .container-ayah {
   .ayah-trans {
     font-size: 1.2em;
   }
+
+  .surahs-list {
+    top: 38%;
+  }
 }
 
 .quran .icon-content {
