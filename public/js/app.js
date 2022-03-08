@@ -72,7 +72,7 @@ $prevBtn.addEventListener('click', () => {
   }
 
   ayahNumber -= 1;
-  return getVerse(ayahNumber);
+  getVerse(ayahNumber);
 });
 
 $surahNameWrapper.addEventListener('click', () => {
