@@ -33,13 +33,14 @@ import fetchData from './request.js';
 Promise.all([
   renderSurah(randomSurah),
   fetchAllSurahs().then(renderSurahsSelect),
-  fetchData(backgroundUrl)
-    .then(changeBackground)
-    .catch((err) =>
+
+  fetchData(backgroundUrl).then(changeBackground).catch((err) =>
       // eslint-disable-next-line no-console
       console.log(`somehing wrong happened when fetching data from ${err.message}`),
     ),
-]);
+]).catch(handleError);
+
+
 
 $fullDate.innerText = getDate();
 $day.innerText = getWeekday();
@@ -77,12 +78,11 @@ $prevBtn.addEventListener('click', () => {
   }
 
   ayahNumber -= 1;
-  return getVerse(ayahNumber);
+  getVerse(ayahNumber);
 });
 
 $surahNameWrapper.addEventListener('click', () => {
-  const styles = 'z-index: 99; opacity: 1; transform: translateY(1rem)';
-  $surahSelect.style.cssText = styles;
+  $surahSelect.classList.toggle('show-select-surah');
 });
 
 $surahSelect.addEventListener('input', () => {
