@@ -34,7 +34,7 @@ Promise.all([
   renderSurah(randomSurah),
   fetchAllSurahs().then(renderSurahsSelect),
   fetchData(backgroundUrl).then(changeBackground),
-]);
+]).catch(handleError);
 
 $fullDate.innerText = getDate();
 $day.innerText = getWeekday();
