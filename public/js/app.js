@@ -76,8 +76,7 @@ $prevBtn.addEventListener('click', () => {
 });
 
 $surahNameWrapper.addEventListener('click', () => {
-  const styles = 'z-index: 99; opacity: 1; transform: translateY(1rem)';
-  $surahSelect.style.cssText = styles;
+  $surahSelect.classList.toggle('show-select-surah');
 });
 
 $surahSelect.addEventListener('input', () => {

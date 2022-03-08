@@ -131,6 +131,12 @@ header .header-content {
   color: white;
 }
 
+.show-select-surah {
+  z-index: 99 !important;
+  opacity: 1 !important;
+  transform: translateY(1rem) !important;
+}
+
 /* Start Main section */
 main .container-ayah {
   display: flex;
